@@ -29,3 +29,13 @@ for (var i = 0; i < hewan.length; i++){
 
 //join
 console.log(hewan.join(", ")); // menggabungkan semua isi array menjadi string
+
+//push, pop, unshift, shift
+hewan.push("domba"); // menambah domba di akhir array
+console.log(hewan.join(", "));
+hewan.pop(); // menghapus hewan di akhir array
+console.log(hewan.join(", "));
+hewan.unshift("babi"); // menambah hewan di awal array
+console.log(hewan.join(", "));
+hewan.shift();  // menghapus hewan di awal array
+console.log(hewan.join(", "));

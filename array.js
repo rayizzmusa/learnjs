@@ -73,3 +73,19 @@ console.log(angka2.join(", "));
 angka.sort();
 console.log(angka.join(", "));
 
+//filter & find : mencari element pada array
+//filter
+var angka = [1,2,4,5,8,7,3];
+var angka2 = angka.filter(function(x){
+    return x > 4;
+});
+console.log(angka2);
+
+//find
+var angka = [1,2,4,5,8,7,3];
+var angka2 = angka.find(function(x){
+    return x == 4;
+});
+console.log(angka2);
+
+

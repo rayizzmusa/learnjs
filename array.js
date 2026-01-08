@@ -39,3 +39,17 @@ hewan.unshift("babi"); // menambah hewan di awal array
 console.log(hewan.join(", "));
 hewan.shift();  // menghapus hewan di awal array
 console.log(hewan.join(", "));
+
+//slice dan splice
+//splice : menyisipkan array ditengah2
+hewan.splice(3, 0, "Jangkrik");
+console.log(hewan.join(", "));
+
+hewan.splice(1, 2);
+console.log(hewan.join(", "));
+
+//slice : mengiris array jadi array baru
+var buah = ["apel", "mangga", "durian", "nanas"];
+console.log(buah.join(", "));
+var buah2 = buah.slice(0, 2);
+console.log(buah2.join(", "));

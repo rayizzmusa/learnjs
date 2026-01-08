@@ -53,3 +53,23 @@ var buah = ["apel", "mangga", "durian", "nanas"];
 console.log(buah.join(", "));
 var buah2 = buah.slice(0, 2);
 console.log(buah2.join(", "));
+
+//foreach & map
+buah.forEach(function(e){
+    console.log(e);
+});
+
+buah.forEach(function(e, i){
+    console.log("buah ke " + (i+1) + " adalah : " + e);
+});
+
+//map : sama seperti foreach, tapi mengembalikan array
+var angka = [1,2,4,5,8,7,3];
+var angka2 = angka.map(function(e){
+    return e * 2;
+});
+console.log(angka2.join(", "));
+
+angka.sort();
+console.log(angka.join(", "));
+

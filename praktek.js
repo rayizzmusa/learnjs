@@ -29,3 +29,20 @@ let tambahPenumpang = function(namaPenumpang, penumpang){
         }
     }
 }
+
+let hapusPenumpang = function(namaPenumpang, penumpang){
+    if(penumpang.length == 0){
+        console.log("Belum ada penumpang");
+        return penumpang;
+    }else{
+        for(var i = 0; i < penumpang.length; i++){
+            if(penumpang[i] == namaPenumpang){
+                penumpang[i] = undefined;
+                return penumpang;
+            }else if(i == penumpang.length - 1){
+                console.log(namaPenumpang + " Tidak ada");
+                return penumpang;
+            }
+        }
+    }
+}

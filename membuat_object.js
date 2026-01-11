@@ -34,5 +34,30 @@ function Mahasiswa(nama, nim, email, jurusan){
 var mhs3 = new Mahasiswa("erik", "12129", "erik@sd.com", "IT");
 
 
+//this
+//pada function declaration
+function halo(){
+    console.log(this);
+    console.log("halo");
+}
+this.halo(); //this disini mengembalikan object global
+
+
+//pada object literal
+var obj={};
+obj.halo = function(){
+    console.log(this);
+    console.log("halo");
+}
+obj.halo(); //this disini mengembalikan object yang bersangkutan
+
+//pada constuctor
+function Halo(){
+    console.log(this);
+    console.log("halo");
+}
+new Halo(); //this disni mengembalikan object yang baru dibuat
+
+
 
 

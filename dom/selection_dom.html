@@ -19,6 +19,10 @@ body {
     font-family: sans-serif;
     color: #333;
 }
+
+/*#b p {color : green;}*/
+/*section#b ul li:nth-child(2) {background-color: blue;}*/
+
 </style>
 </head>
 <body>
@@ -41,6 +45,21 @@ body {
     </section>
 </div>
 
-<script src="selection_dom.js"></script>
+<!-- <script src="selection_dom.js"></script> -->
 </body>
 </html>
+
+<!-- selection dom part 2 querySelector dan querySelectiorAll = biasanya digunakan untuk element yang tidak ada element id, class-->
+<script>
+    //document.querySelector() mengembalikan element, selector yang dimaksud adalah selectior css
+    const p4 = document.querySelector('#b p');
+    p4.style.color = 'green';
+
+    const li2 = document.querySelector('section#b ul li:nth-child(2)');
+    li2.style.backgroundColor = 'orange';
+
+    //document.querySelectorAll() mengembalikan node list, untuk memilih semua selector
+    const p = document.querySelectorAll('p')[1];
+    p.style.backgroundColor = 'blue';
+
+</script>

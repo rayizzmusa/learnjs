@@ -32,6 +32,35 @@
 // p2.classList.replace('tebal', 'miring'); //mengganti class tebal menjadi miring
 
 //element.createElement()
+const paragrafBaru = document.createElement('p');
+const teksParagrafBaru = document.createTextNode('paragraf baru');
+//menggabungkan teks ke dalam paragraf baru
+paragrafBaru.appendChild(teksParagrafBaru);
+//menempatkan paragraf baru di akhir section a
+const sectionA = document.getElementById('a');
+sectionA.appendChild(paragrafBaru);
+
+//element.insertBefore()
+const liBaru = document.createElement('li');
+const teksLiBaru = document.createTextNode('item baru');
+liBaru.appendChild(teksLiBaru);
+const ul = document.querySelector('section#b ul');
+const li2 = ul.querySelector('li:nth-child(2)');
+ul.insertBefore(liBaru,li2);
+
+//removeChild()
+const link = document.getElementsByTagName('a')[0];
+sectionA.removeChild(link);
+
+//replaceChild()
+const sectionB = document.getElementById('b');
+const p4 = sectionB.querySelector('p');
+const hBaru = document.createElement('h2');
+const teksHBaru = document.createTextNode('Judul Baru!');
+hBaru.appendChild(teksHBaru);
+sectionB.replaceChild(hBaru, p4);
+
+
 
 
 

@@ -33,11 +33,40 @@
         const btnBaru = document.createElement('button');
         const mark = document.createTextNode('Random');
         btnBaru.appendChild(mark);
-        document.body.appendChild(btnBaru);
-    })
+        btnBaru.setAttribute('type', 'button');
+        btnBaru.setAttribute('id', 'random')
+        btnMerah.after(btnBaru);
 
+        //membuat warna random
+        const btnRandom = document.getElementById('random');
+        btnRandom.onclick = function () {
+            const r = Math.round(Math.random() * 255 + 1);
+            const g = Math.round(Math.random() * 255 + 1);
+            const b = Math.round(Math.random() * 255 + 1);
+            document.body.style.backgroundColor = 'rgb(' + r + ',' + g + ',' + b + ')';
+        }
+    });
 
+    //contoh rapih
+    /*const btnMerah = document.getElementById('merah');
 
+    btnMerah.addEventListener("click", function () {
+        document.body.style.backgroundColor = 'red';
+        btnMerah.textContent = "Putih";
 
+        let btnRandom = document.getElementById('random');
+
+        if (!btnRandom) {
+            btnRandom = document.createElement('button');
+            btnRandom.id = 'random';
+            btnRandom.type = 'button';
+            btnRandom.textContent = 'Random';
+            btnMerah.after(btnRandom);
+
+            btnRandom.addEventListener('click', function () {
+                document.body.style.backgroundColor = 'lightblue';
+            });
+        }
+    });*/
 
 </script>

@@ -7,9 +7,11 @@
     <title>Latihan 1 DOM</title>
     <style>
         /*buat tinggi halaman penuh*/
-        html, body{
+        html,
+        body {
             height: 100%;
         }
+
         body {
             text-align: center;
         }
@@ -20,15 +22,15 @@
             margin: 10px auto;
         }
 
-        .reds{
+        .reds {
             background-color: red;
         }
 
-        .green{
+        .green {
             background-color: green;
         }
 
-        .blue{
+        .blue {
             background-color: blue;
         }
 
@@ -87,29 +89,29 @@
     const sliderHijau = document.querySelector('input[name=rangeHijau]');
     const sliderBiru = document.querySelector('input[name=rangeBiru]');
 
-    sliderMerah.addEventListener('input', function(){
+    sliderMerah.addEventListener('input', function () {
         const r = sliderMerah.value;
         const g = sliderHijau.value;
         const b = sliderBiru.value;
-        document.body.style.backgroundColor = 'rgb('+r+', '+g+', '+b+')';
+        document.body.style.backgroundColor = 'rgb(' + r + ', ' + g + ', ' + b + ')';
     });
 
-    sliderHijau.addEventListener('input', function(){
+    sliderHijau.addEventListener('input', function () {
         const r = sliderMerah.value;
         const g = sliderHijau.value;
         const b = sliderBiru.value;
-        document.body.style.backgroundColor = 'rgb('+r+', '+g+', '+b+')';
+        document.body.style.backgroundColor = 'rgb(' + r + ', ' + g + ', ' + b + ')';
     });
 
-    sliderBiru.addEventListener('input', function(){
+    sliderBiru.addEventListener('input', function () {
         const r = sliderMerah.value;
         const g = sliderHijau.value;
         const b = sliderBiru.value;
-        document.body.style.backgroundColor = 'rgb('+r+', '+g+', '+b+')';
+        document.body.style.backgroundColor = 'rgb(' + r + ', ' + g + ', ' + b + ')';
     })
 
     //cursor mouse
-    document.body.addEventListener('mousemove', function(e){
+    document.body.addEventListener('mousemove', function (e) {
         //posisi mouse
         //e.clientX //sumbu x
 
@@ -119,7 +121,7 @@
         const xPos = Math.round((e.clientX / window.innerWidth) * 255);
         const yPos = Math.round((e.clientY / window.innerHeight) * 255);
 
-        document.body.style.backgroundColor = 'rgb('+xPos+', '+yPos+', 100)';
+        document.body.style.backgroundColor = 'rgb(' + xPos + ', ' + yPos + ', 100)';
     })
 
 

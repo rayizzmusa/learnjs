@@ -6,8 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Latihan 1 DOM</title>
     <style>
+        /*buat tinggi halaman penuh*/
+        html, body{
+            height: 100%;
+        }
         body {
             text-align: center;
+        }
+
+        .kotak {
+            width: 25px;
+            height: 25px;
+            margin: 10px auto;
+        }
+
+        .reds{
+            background-color: red;
+        }
+
+        .green{
+            background-color: green;
+        }
+
+        .blue{
+            background-color: blue;
         }
 
         .Merah {
@@ -19,6 +41,18 @@
 <body>
     <h1>Bermain Dengan Warna</h1>
     <button type="button" id="merah" class="merah">Merah</button>
+    <br><br>
+    <div class="kotak reds">
+    </div>
+    <input type="range" name="rangeMerah" min="0" max="255">
+
+    <div class="kotak green">
+    </div>
+    <input type="range" name="rangeHijau" min="0" max="255">
+
+    <div class="kotak blue">
+    </div>
+    <input type="range" name="rangeBiru" min="0" max="255">
 </body>
 
 </html>
@@ -46,6 +80,52 @@
             document.body.style.backgroundColor = 'rgb(' + r + ',' + g + ',' + b + ')';
         }
     });
+
+
+    //slider
+    const sliderMerah = document.querySelector('input[name=rangeMerah]');
+    const sliderHijau = document.querySelector('input[name=rangeHijau]');
+    const sliderBiru = document.querySelector('input[name=rangeBiru]');
+
+    sliderMerah.addEventListener('input', function(){
+        const r = sliderMerah.value;
+        const g = sliderHijau.value;
+        const b = sliderBiru.value;
+        document.body.style.backgroundColor = 'rgb('+r+', '+g+', '+b+')';
+    });
+
+    sliderHijau.addEventListener('input', function(){
+        const r = sliderMerah.value;
+        const g = sliderHijau.value;
+        const b = sliderBiru.value;
+        document.body.style.backgroundColor = 'rgb('+r+', '+g+', '+b+')';
+    });
+
+    sliderBiru.addEventListener('input', function(){
+        const r = sliderMerah.value;
+        const g = sliderHijau.value;
+        const b = sliderBiru.value;
+        document.body.style.backgroundColor = 'rgb('+r+', '+g+', '+b+')';
+    })
+
+    //cursor mouse
+    document.body.addEventListener('mousemove', function(e){
+        //posisi mouse
+        //e.clientX //sumbu x
+
+        //ukuran browser
+        //window.innerWidth //lebar dokument
+
+        const xPos = Math.round((e.clientX / window.innerWidth) * 255);
+        const yPos = Math.round((e.clientY / window.innerHeight) * 255);
+
+        document.body.style.backgroundColor = 'rgb('+xPos+', '+yPos+', 100)';
+    })
+
+
+
+
+
 
     //contoh rapih
     /*const btnMerah = document.getElementById('merah');

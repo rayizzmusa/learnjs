@@ -20,44 +20,80 @@ function getHasil(comp, player){
         }
 }
 
-const playerGajah = document.querySelector('.gajah');
-playerGajah.addEventListener('click', function(){
-    const pilihanKomputer = getPilihanKomputer();
-    const pilihanPlayer = playerGajah.className;
+function putar(){
+    const gambarKomp = document.querySelector('.img-komputer');
+    const gambar = ['gajah', 'semut', 'orang'];
+    let a = 0;
+    const waktuMulai = new Date().getTime();
+    setInterval(function(){
+        if( new Date().getTime() - waktuMulai > 1000){
+            clearInterval;
+            return;
+        }
+        gambarKomp.setAttribute('src', 'img/' + gambar[a++] + '.png');
+        if (a == gambar.length) a = 0;
+    }, 100);
+}
 
-    const hasil = getHasil(pilihanKomputer, pilihanPlayer);
+const pilihan = document.querySelectorAll("li img");
+pilihan.forEach(function(i){
+    i.addEventListener('click', function(){
+        const pilihanKomputer = getPilihanKomputer();
+        const pilihanPlayer = i.className;
+
+        const hasil = getHasil(pilihanKomputer, pilihanPlayer);
+        
+        putar();
+        setTimeout(() => {
+            const gambarKomputer = document.querySelector('.img-komputer');
+            gambarKomputer.setAttribute('src', 'img/' + pilihanKomputer +'.png');
+
+            const info = document.querySelector(".info");
+            info.innerHTML = hasil;
+        }, 1000);
+
+        
+    })
+})
+
+// const playerGajah = document.querySelector('.gajah');
+// playerGajah.addEventListener('click', function(){
+//     const pilihanKomputer = getPilihanKomputer();
+//     const pilihanPlayer = playerGajah.className;
+
+//     const hasil = getHasil(pilihanKomputer, pilihanPlayer);
     
-    const gambarKomputer = document.querySelector('.img-komputer');
-    gambarKomputer.setAttribute('src', 'img/' + pilihanKomputer +'.png');
+//     const gambarKomputer = document.querySelector('.img-komputer');
+//     gambarKomputer.setAttribute('src', 'img/' + pilihanKomputer +'.png');
 
-    const info = document.querySelector(".info");
-    info.innerHTML = hasil;
-});
+//     const info = document.querySelector(".info");
+//     info.innerHTML = hasil;
+// });
 
-const playerOrang = document.querySelector('.orang');
-playerOrang.addEventListener('click', function(){
-    const pilihanKomputer = getPilihanKomputer();
-    const pilihanPlayer = playerOrang.className;
+// const playerOrang = document.querySelector('.orang');
+// playerOrang.addEventListener('click', function(){
+//     const pilihanKomputer = getPilihanKomputer();
+//     const pilihanPlayer = playerOrang.className;
 
-    const hasil = getHasil(pilihanKomputer, pilihanPlayer);
+//     const hasil = getHasil(pilihanKomputer, pilihanPlayer);
     
-    const gambarKomputer = document.querySelector('.img-komputer');
-    gambarKomputer.setAttribute('src', 'img/' + pilihanKomputer +'.png');
+//     const gambarKomputer = document.querySelector('.img-komputer');
+//     gambarKomputer.setAttribute('src', 'img/' + pilihanKomputer +'.png');
 
-    const info = document.querySelector(".info");
-    info.innerHTML = hasil;
-});
+//     const info = document.querySelector(".info");
+//     info.innerHTML = hasil;
+// });
 
-const playerSemut = document.querySelector('.semut');
-playerSemut.addEventListener('click', function(){
-    const pilihanKomputer = getPilihanKomputer();
-    const pilihanPlayer = playerSemut.className;
+// const playerSemut = document.querySelector('.semut');
+// playerSemut.addEventListener('click', function(){
+//     const pilihanKomputer = getPilihanKomputer();
+//     const pilihanPlayer = playerSemut.className;
 
-    const hasil = getHasil(pilihanKomputer, pilihanPlayer);
+//     const hasil = getHasil(pilihanKomputer, pilihanPlayer);
     
-    const gambarKomputer = document.querySelector('.img-komputer');
-    gambarKomputer.setAttribute('src', 'img/' + pilihanKomputer +'.png');
+//     const gambarKomputer = document.querySelector('.img-komputer');
+//     gambarKomputer.setAttribute('src', 'img/' + pilihanKomputer +'.png');
 
-    const info = document.querySelector(".info");
-    info.innerHTML = hasil;
-});
+//     const info = document.querySelector(".info");
+//     info.innerHTML = hasil;
+// });

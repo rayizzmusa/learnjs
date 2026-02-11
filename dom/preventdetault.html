@@ -87,28 +87,28 @@
             <img src="img/syifa.jpg" width="96" height="96">
             <span class="nama">Sandhika Galih</span>
             <span class="telp">08123456789</span>
-            <a href="" class="close">×</a>
+            <span class="close">×</span>
         </div>
 
         <div class="card">
             <img src="img/syifa.jpg" width="96" height="96">
             <span class="nama">Sandhik</span>
             <span class="telp">08123456789</span>
-            <a href="" class="close">×</a>
+            <span class="close">×</span>
         </div>
 
         <div class="card">
             <img src="img/syifa.jpg" width="96" height="96">
             <span class="nama">Sandhika</span>
             <span class="telp">08123456789</span>
-            <a href="" class="close">×</a>
+            <span class="close">×</span>
         </div>
 
         <div class="card">
             <img src="img/syifa.jpg" width="96" height="96">
             <span class="nama">Galih</span>
             <span class="telp">08123456789</span>
-            <a href="" class="close">×</a>
+            <span class="close">×</span>
         </div>
 
     </div>
@@ -140,14 +140,20 @@
             //kalau pakai parameter
             event.target.parentElement.remove();
 
-            //prevent default
+            //prevent default => misal tag spannya diganti a
             event.preventDefault();
+
+            //utk pencegahan event bubbling
+            event.stopPropagation();
         })
     }
 
-    const nama = document.querySelector('.nama');
-    console.log(nama.parentElement.parentElement);
 
-
-    
+    //event bubbling
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(function(e){
+        e.addEventListener('click', function(el){
+            alert('ok');
+        })
+    })
 </script>
